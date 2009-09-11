@@ -1,0 +1,76 @@
+body {
+  margin: 0px;
+  padding: 0px;
+}
+
+label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 0px;  
+}
+
+input {
+}
+
+.form_errors, .form_error {
+  background: #fee;
+  border: 1px solid #f00;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+#header {
+  background: url("/system/header.png");
+  background-position: right;
+  background-repeat: no-repeat;
+  background-color: #07295c;
+  height: 120px;
+  color: #fff;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+#header #navigation {
+  font-family: "Trebuchet MS", "Verdana", "Arial"
+  font-size: 18px;
+  font-weight: bold;  
+  padding: 50px;
+  padding-left: 20px;
+}
+
+#header a:link, #header a:visited {
+  color: #fff;
+}
+
+#footer {
+  border-top: 1px solid #ccc;
+}
+
+#container {
+  padding: 20px;
+}
+
+#footer {
+  clear: both;
+  padding: 20px;
+  margin-top: 20px;
+}
+
+table.data {
+  border-collapse: collapse;
+}
+
+.data th {
+  background: #eee;
+  padding: 5px;
+  border: 1px solid #bbb;
+}
+
+.data td {
+  padding: 5px;
+  border: 1px solid #bbb;
+}
+
+.hover {
+  background: #ffd;
+}

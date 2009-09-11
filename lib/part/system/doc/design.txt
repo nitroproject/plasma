@@ -1,0 +1,3 @@
+
+
+- use a plugin system for administration modules.

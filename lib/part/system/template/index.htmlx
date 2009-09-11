@@ -1,0 +1,7 @@
+<Page>
+
+Welcome to the admin system of Nitro.
+
+<p><a href="{{OgSystemController}}">Og management</a></p>
+
+</Page>

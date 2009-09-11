@@ -1,0 +1,15 @@
+
+
+<PagePath>
+  Dig, Article, article
+</PagePath>
+
+collect with R operator to create the navigation. should generate
+linked / non linked version for usage in navigation and title.
+
+
+<PageMap>
+</PageMap>
+
+
+- Hierarchical tags (like f-spot)

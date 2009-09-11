@@ -1,0 +1,3 @@
+
+- make everyhting owned by users (even use virtual users?)
+  -> even better user -> category -> object

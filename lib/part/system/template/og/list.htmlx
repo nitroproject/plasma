@@ -1,0 +1,42 @@
+<Page>
+
+<Head>
+  <script src="/js/tablehover.js" type="text/javascript" />
+</Head>  
+
+<Script>
+  $(".data").tableHover();
+  $(".confirm").click(function() {
+    confirm("Are you sure?");
+  });
+</Script>
+
+<p>
+  <a href="{{:create, :class_name, @class_name}}">Create</a> a new object | 
+  <a href="{{:query, :class_name, @class_name}}">Query</a> by example.
+</p>
+  
+<table class="data">
+  <thead>
+  <tr>
+    <th>Oid</th>
+    <th>Title</th>
+    <th for="a in @ui.list_attributes">#{a.to_s.humanize}</th>
+    <th colspan="3">Options</th>
+  </tr>
+  </thead>
+  <tbody>  
+  <?r for obj in @objects ?>
+  <tr>
+    <td><a href="{{:update, :class_name, @class_name, :oid, obj.oid}}">#{obj.oid}</a></td>
+    <td>#{obj.to_s}</td>
+    <td for="a in @ui.list_attributes">#{obj.send(a)}</td>
+    <td><a href="#{@ui.view(obj)}">view</a></td>  
+    <td><a href="{{:update, :class_name, @class_name, :oid, obj.oid}}">update</a></td>  
+    <td><a href="{{:delete, :class_name, @class_name, :oid, obj.oid}}" class="confirm">delete</a></td>  
+  </tr>
+  <?r end ?>
+  </tbody>
+</table>
+
+</Page>

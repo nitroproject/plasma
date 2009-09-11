@@ -1,0 +1,9 @@
+= Plasma
+
+A very high level Web Application Framework build on top
+of the Nitro Web Framework. This is implemented as a 
+Nitro plugin.
+
+
+--
+Copyright (c) 2004-2007 George Moschovitis, www.gmosx.com

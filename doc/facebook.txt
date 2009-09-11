@@ -1,0 +1,3 @@
+- http://www.liverail.net/articles/2007/6/29/tutorial-on-developing-a-facebook-platform-application-with-ruby-on-rails
+- http://www.liverail.net/articles/2007/7/16/continuing-facebook-applications-with-ruby-on-rails
+- http://20bits.com/2007/06/19/5-facebook-application-gotchas/

@@ -1,0 +1,26 @@
+
+- For configuring part code we have the following options:
+
+  if IdPart.verify
+    ..
+  end
+
+  - needs the IdPart defined
+
+  or 
+
+  if Configuration.IdPart.verif
+    ..
+  end
+  
+  - long, needs Configuration
+
+  or 
+
+  if $conf_id_verify
+    ..
+  end
+
+  a bit ugly but this is the solution used!
+
+

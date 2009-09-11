@@ -1,0 +1,4 @@
+
+
+- Don't use something link blueprint.css / grid. It is not semantically correct.
+

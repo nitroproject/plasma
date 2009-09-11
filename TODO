@@ -1,0 +1,14 @@
+
+
+- added mechanism for styling forms.
+
+- compress js in one file and pass through yui compressor.
+- in sitemap check if action has self as parent.
+
+- implement human time as jquery plugin.
+
+- more intelligent sitemap
+  --> even better: NO sitemap!
+
+- more intrelligent R
+- google maps

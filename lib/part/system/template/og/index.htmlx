@@ -1,0 +1,40 @@
+<Page>
+
+<Head>
+  <script src="/js/tablehover.js" type="text/javascript" />
+</Head>  
+
+<Script>
+  $(".data").tableHover();
+  $(".confirm").click(function() {
+    confirm("Are you sure?");
+  });
+</Script>
+  
+<p>
+  Og manages <strong>#{@classes.size}</strong> classes.
+</p>
+    
+<table class="data">
+  <thead>
+  <tr>
+    <th>Model class</th>
+    <th>Count</th>
+    <th colspan="4">Options</th>
+  </tr>
+  </thead>
+  <tbody>
+  <?r for cl in @classes ?>
+  <tr>
+    <td><a href="{{:list, :class_name, class_to_name(cl)}}">#{cl.to_s.gsub(/::/, " ")}</a></td>
+    <td>#{cl.count}</td>
+    <td><a href="{{:list, :class_name, cl}}">list</a></td>
+    <td><a href="{{:create, :class_name, cl}}">create</a></td>
+    <td><a href="{{:query, :class_name, cl}}">query</a></td>
+    <td><a href="{{:delete_all, :class_name, cl}}" class="confirm">delete all</a></td>
+  </tr>
+  <?r end ?>
+  </tbody>
+</table>
+
+</Page>

@@ -1,0 +1,13 @@
+<Page>
+
+  <?r if @view ?>
+  
+    #@view
+    
+  <?r else ?>
+    
+    No view defined.
+      
+  <?r end ?>
+
+</Page>
