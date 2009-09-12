@@ -1,0 +1,27 @@
+<Page>
+
+  <SitePath>
+    <a href="/">#{context.dispatcher[""].ann(:index, :title) || 'Home'}</a> / 
+    <a href="#{AdminController.mount_path}">Admin</a> / 
+    Og 
+  </SitePath>
+
+  <?r
+    @headers = [ 'Class',  'Count', ' ', ' ', ' ', ' ', ' ' ]
+    @values = @classes.inject([]) do |v, c| 
+      name = class_to_name(c)
+      v << [ 
+        %{<a href="#{R :list, :name, name}">#{c.name.gsub(/::/, ' ')}</a>}, 
+        c.count, 
+        %{<a href="#{R :create, :name, name}">create</a>},
+        %{<a href="#{R :list, :name, name}">list</a>},
+        %{<a href="#{R :search, :name, name}">search</a>},
+        %{<a href="#{R :delete_class, :name, name}" onclick="confirm('Are you sure?')">delete</a>},
+        %{<a href="#{R :destroy_class, :name, name}" onclick="confirm('Are you sure?')">destroy</a>}
+      ] 
+    end 
+  ?>
+
+  #{table :headers => @headers, :values => @values, :alternating_rows => true, :class => :data}
+
+</Page>

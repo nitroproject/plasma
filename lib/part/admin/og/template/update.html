@@ -1,0 +1,25 @@
+<Page>
+
+  <SitePath>
+    <a href="/">#{context.dispatcher[""].ann(:index, :title) || 'Home'}</a> / 
+    <a href="#{AdminController.mount_path}">Admin</a> / 
+    <a href="#{OgAdminController.mount_path}">Og</a> / 
+    <a href="#{R OgAdminController, :list, :name, @obj.class}">#{@obj.class.name.gsub(/::/, ' ').plural}</a> / 
+    <?r if action_name == 'update' ?>
+      Update '#@obj'
+    <?r else ?>
+      Create new #{@obj.class.name.gsub(/::/, ' ')}
+    <?r end ?>
+  </SitePath>
+
+  #{form :object => @obj, :action => "#{R :save}", :method => :post, :enctype => "multipart/form-data" do |f|
+    f.form_errors
+    f.hidden :object_class_name, class_to_name(@obj.class)
+    f.attributes
+    f.relations
+    f.br
+    f.submit 'Save'
+    f.text ' or <a href="' + R(:list, :name, class_to_name(@obj.class)) + '">Cancel</a>'  
+  end}
+
+</Page>

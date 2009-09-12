@@ -1,0 +1,20 @@
+<Page>
+
+  <SitePath>
+    <a href="/">#{context.dispatcher[""].ann(:index, :title) || 'Home'}</a> / 
+    <a href="#{AdminController.mount_path}">Admin</a> / 
+    <a href="#{OgAdminController.mount_path}">Og</a> / 
+    <a href="#{R OgAdminController, :list, :name, @obj.class}">#{@obj.class.name.gsub(/::/, ' ').plural}</a> / 
+    Search
+  </SitePath>
+
+  #{form :object => @obj, :action => "#{R :search_results}", :method => :post do |f|
+    f.form_errors
+    f.hidden :object_class_name, class_to_name(@obj.class)
+    f.attributes
+    f.br
+    f.submit 'Search'
+    f.text ' or <a href="' + R(:list, :name, class_to_name(@obj.class)) + '">Cancel</a>'  
+  end}
+
+</Page>

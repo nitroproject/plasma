@@ -1,0 +1,39 @@
+<Page>
+
+  <SitePath>
+    <a href="/">#{context.dispatcher[""].ann(:index, :title) || 'Home'}</a> / 
+    <a href="#{AdminController.mount_path}">Admin</a> / 
+    <a href="#{OgAdminController.mount_path}">Og</a> / 
+    <?r if action_name == 'list' ?>
+      #{@klass.name.gsub(/::/, ' ').plural}
+    <?r else ?>
+      Search results
+    <?r end ?>
+  </SitePath>
+
+  <?r
+    unless @objects.empty?
+      @headers = [ 'Oid', 'Name', ' ', ' ' ]
+      @values = @objects.inject([]) do |v, o| 
+        v << [ 
+          o.oid,
+          %{<a href="#{R :update, :name, class_to_name(@klass), :oid, o.oid}">#{o}</a>}, 
+          %{<a href="#{R :update, :name, class_to_name(@klass), :oid, o.oid}">update</a>}, 
+          %{<a href="#{R :delete, :name, class_to_name(@klass), :oid, o.oid}" onclick="confirm('Are you sure?')">delete</a>}
+        ] 
+      end 
+  ?>
+
+      #{table :headers => @headers, :values => @values, :alternating_rows => true, :class => :data}
+
+      <div class="pager" if="@pager and @pager.navigation?">
+        #{@pager.navigation}
+      </div>
+        
+  <?r else ?>
+  
+      No objects.
+  
+  <?r end ?>
+
+</Page>
